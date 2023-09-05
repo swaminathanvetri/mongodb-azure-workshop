@@ -118,6 +118,11 @@ You should see a new `publish` folder created alongside other folders which will
 
 `Allow access from ALL network in MongoDB Atlas to enable access to the DB from Azure` - **ONLY for Demo purpose, this is strictly prohibited for production workloads**
 
+----------------------
+
+ Congratulations - You finished the first module :clap: :fire: :tada: 
+
+-----------------------
 
 # Bonus exercises
 
@@ -139,7 +144,7 @@ You should see a new `publish` folder created alongside other folders which will
 
 * Add tags in the next screen
 
-#### 1.4 Review and Create
+#### 1.1.4 Review and Create
 
 ![](assets/azportal-kv-reviewncreate.png)
 
@@ -190,3 +195,5 @@ Copy the Object id once Managed identity is created
 ### 1.6 Redeploy the application after removing connection string value in `appSettings.json`
 
 ## 2. Setting up continuous deployment from Azure Portal
+
+TBD
