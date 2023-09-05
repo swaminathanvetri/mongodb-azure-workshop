@@ -65,6 +65,26 @@
 
 ## 2. Setting up VS Code with Azure Tools Extension
 
+### 2.1 Install `Azure Tools extension in VS Code`
+
+![](assets/vscode-azuretools-installation.png)
+
+### 2.2 Sign in to Azure
+
+#### 2.2.1 Sign in 
+![](assets/vscode-azure-signin.png)
+
+#### 2.2.2 Pick Azure Login
+
+![](assets/vscode-pick-az-login.png)
+
+#### 2.2.3 Azure login confirmation in the browser
+
+![](assets/vscode-az-login-browser-confirmation.png)
+
+#### 2.2.4 Signed in View in `VS Code`
+![](assets/vscode-signedin-subscription-view.png)
+
 ## 3. Deploying dotnet app from VSCode to Azure App service
 
 ### 3.1 Publish the dotnet app into local folder
@@ -79,13 +99,22 @@ You should see a new `publish` folder created alongside other folders which will
 
 #### 3.2.1 Right click on the `publish` folder and click `Deploy to webapp`
 
+![Right click publish](assets/vscode-webapp-publish-step1.png)
+
 #### 3.2.2 Choose the Azure app service that was created in step `1`
+![Choose web app](assets/vscode-webapp-publish-choose-webapp.png)
 
 #### 3.2.3 Provide confirmation for deployment
+![Provide confirmation](assets/vscode-webapp-publish-confirmation.png)
 
 #### 3.2.4 Monitor the deployment progress in `output` window
 
+* Monitor deployment
+![](assets/vscode-webapp-publish-progress-output-window.png)
+
+
 #### 3.2.5 Browse to the web app once deployment is done 
+![](assets/vscode-webapp-publish-completion.png)
 
 `Allow access from ALL network in MongoDB Atlas to enable access to the DB from Azure` - **ONLY for Demo purpose, this is strictly prohibited for production workloads**
 
