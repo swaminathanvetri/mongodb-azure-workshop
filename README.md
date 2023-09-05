@@ -121,7 +121,72 @@ You should see a new `publish` folder created alongside other folders which will
 
 # Bonus exercises
 
-## Setting up continuous deployment from Azure Portal
 
-## Reading the secrets from Azure Key Vault
+## 1. Reading the secrets from Azure Key Vault
 
+### 1.1 Create Azure Key Vault
+
+#### 1.1.1 Choose unique name, region, pricing tier
+![](assets/azportal-kv-creation.png)
+
+#### 1.1.2 Choose access configuration
+
+![](assets/azportal-kv-access-config.png)
+
+#### 1.1.3 Choose networking option
+
+![](assets/azportal-kv-networking.png)
+
+* Add tags in the next screen
+
+#### 1.4 Review and Create
+
+![](assets/azportal-kv-reviewncreate.png)
+
+### 1.2 Create secret in Azure Key Vault
+
+* Pick the connection string from Mongo DB Cloud Connect panel and add as a secret
+![](assets/azportal-kv-create-secret.png)
+
+### 1.3 Create managed identity for Azure App service
+Click on `Identity` menu item and enable `System Managed Identity`
+
+![](assets/azportal-webapp-system-identity.png)
+
+Copy the Object id once Managed identity is created
+
+![](assets/azportal-webapp-copy-managed-identity.png)
+
+### 1.4 Setup key vault access to Azure app service
+
+* Click on `Access Policy` in the Azure Key Vault created in Step 1
+* Click on `Create Access Policy`
+* Choose the `Permissions`
+
+![](assets/azportal-kv-create-access-policy.png)
+
+* Choose the `Principal` -> _Search for the app service name here_
+
+![](assets/azportal-kv-choose-spn.png)
+
+* Review and create
+
+![](assets/azportal-kv-reviewncreate-access-policy.png)
+
+![](assets/azportal-kv-access-policy-added.png)
+
+
+### 1.5 Update appsettings value to refer from keyvault
+
+* Click on `Configuration` menu in the `Azure App Service`
+* Click on `Application Settings` tab
+* Click on `New Application Settings`
+* Give the key as `MongoDB__ConnectionURI`
+* Give the value as `@Microsoft.KeyVault(SecretUri=<pick value from your kv secret>)`
+* Click on `Save`
+
+![](assets/azportal-webapp-add-kv-reference.png)
+
+### 1.6 Redeploy the application after removing connection string value in `appSettings.json`
+
+## 2. Setting up continuous deployment from Azure Portal
