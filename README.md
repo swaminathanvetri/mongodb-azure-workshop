@@ -196,4 +196,46 @@ Copy the Object id once Managed identity is created
 
 ## 2. Setting up continuous deployment from Azure Portal
 
-TBD
+### 2.1 Fork the repository to your account
+
+![](assets/github-fork-repo.png)
+
+### 2.2 Create a pull request from feature/workshop-4 branch to main
+
+### 2.3 Merge the PR
+
+### 2.4 Setup CI/CD from GitHub repo
+
+### 2.4.1 Download Azure Publish profile and Setup GitHub secret
+
+* Navigate to the Azure Web App in Azure portal
+* Click on Download publish profile
+
+![](assets/azportal-webapp-download-publish-profile.png)
+* Copy the contents of the publish profile and create `secrets` under Repo `Settings`
+
+![](assets/github-add-secret.png)
+
+### 2.4.2 Navigate to actions tab and choose Deployment template
+
+![](assets/github-workflow-creation.png)
+
+Modify the environment variables as follows
+
+* `AZURE_WEBAPP_NAME: <your azure web app name>`
+* `DOTNET_VERSION: 6.0.x`
+* Commit the workflow file
+
+![](assets/github-commit-workflow-file.png)
+
+### 2.4.3 Monitor Deployment in Actions tab
+
+![](assets/github-actions-monitor.png)
+
+Click on the link present in `deploy` job and browse the webapp
+
+----------
+
+# Congratulations you have just setup CI/CD :clap: :fire: :tada: 
+
+
